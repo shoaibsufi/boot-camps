@@ -1,9 +1,0 @@
-# compiled Jekyll site
-_site
-
-# emacs
-*~
-
-# Python
-*.pyc
-
