@@ -11,8 +11,8 @@ The script:
 
 To use:
 
-1. Install Anaconda CE Python distribution
-   http://continuum.io/anacondace.html
+1. Install Enthought Python distribution
+   http://www.enthought.com/products/epd.php
 2. Install msysgit
    http://code.google.com/p/msysgit/downloads/list?q=full+installer+official+git
 3. Run swc_windows_installer.py
@@ -68,10 +68,9 @@ def create_nosetests_entry_point(python_scripts_directory):
 
 
 def main():
-    python_scripts_directory = "C:\\Anaconda\\Scripts\\"
-    #python_scripts_directory = "./scripts/"
+    python_scripts_directory = "C:\\Python27\\Scripts\\"
     create_ipython_entry_point(python_scripts_directory)
-    create_nosetests_entry_point(python_scripts_directory)
+    #create_nosetests_entry_point(python_scripts_directory)
     install_nano(python_scripts_directory)
 
 

@@ -1,11 +1,11 @@
-Python 9 : NumPy
-================
+Scientific Python : NumPy
+=========================
 
-**Presented By : Katy Huff**
+**Presented By : Jonathan Cooper**
 
-**Based on Lecture Materials By Matthew Terry**
+**Based on Lecture Materials By Matthew Terry and Katy Huff**
 
-This class will cover a broad overview of NumPy with brief illustrative
+This session will cover a broad overview of NumPy with brief illustrative
 examples geared towards getting people familiar with the basic use
 cases. Since NumPy has many advanced features that may be useful to
 experienced programmers, these notes will occasionally link to more
@@ -13,15 +13,15 @@ advanced examples that readers can peruse on their own time.
 
 **Aside: Code Examples**
 
-In all the examples below, we assume that import numpy has already been
+In all the examples below, we assume that `import numpy` has already been
 executed. If any other modules are needed, we will import them
 explicitly.
 
 NumPy basics
 ============
 
-What is NumPy ?
----------------
+What is NumPy?
+--------------
 
 NumPy is a Python package implementing efficient collections of specific
 types of data (generally numerical), similar to the standard array
@@ -43,7 +43,7 @@ automatically-chosen one would be unsuitable.
   >>> A = numpy.array([1, 2.3, 4])   
   >>> A.dtype 
   dtype('float64')   
-  >>> B= numpy.array([1, 2.3, 4], dtype int)   
+  >>> B = numpy.array([1, 2.3, 4], dtype=int)
   >>> B.dtype   
   dtype('int32') 
 ```
@@ -311,11 +311,9 @@ Views vs. Copies
 
 In order to be as efficient as possible, NumPy uses "views" instead of
 copies wherever possible. That is, NumPy arrays derived from another
-base array generally refer to the ''exact same data'' as the base array.
+base array generally refer to the __exact same data__ as the base array.
 The consequence of this is that modification of these derived arrays
-will also modify the base array. You saw this above in how the result of
-an array indexed by an array of indices is a ''copy'', but an array
-indexed by an array of booleans is a ''view''. (Phew!)
+will also modify the base array.
 
 Specifically, slices of arrays are always views, unlike slices of lists
 or tuples, which are always copies.
@@ -346,7 +344,7 @@ Mathematics with NumPy
 Being designed for scientific computing, NumPy also contains a host of
 common mathematical functions, including linear algebra functions, fast
 Fourier transforms, and probability/statistics functions. While there
-isn't space to go over ''all'' of these in detail, we will provide an
+isn't space to go over __all__ of these in detail, we will provide an
 overview of the most common/essential of these.
 
 Basics
@@ -389,8 +387,8 @@ operations:
   >>> A.T # transpose
   array([[ 0,  4,  8, 12],
          [ 1,  5,  9, 13],
-       [ 2,  6, 10, 14],
-       [ 3,  7, 11, 15]])
+         [ 2,  6, 10, 14],
+         [ 3,  7, 11, 15]])
   >>> A.trace()
   30
 ```
@@ -406,10 +404,11 @@ So far, we've used two-dimensional arrays to represent matrix-like
 objects. However, NumPy provides a specialized class for this. The
 matrix class is almost identical to a two-dimensional NumPy array, but
 has a few changes to the interface to simplify common linear algebraic
-tasks. These are: \* The `*` operator is performs matrix multiplication
-\* The `**` operator performs matrix exponentiation \* The property `.I`
-(or the method `.getI()`) returns the matrix inverse \* The property
-`.H` (or the method `.getH()`) returns the conjugate transpose
+tasks. These are:
+ * The `*` operator performs matrix multiplication
+ * The `**` operator performs matrix exponentiation
+ * The property `.I` (or the method `.getI()`) returns the matrix inverse
+ * The property `.H` (or the method `.getH()`) returns the conjugate transpose
 
 ### Example: Solving a System of Linear Equations
 
@@ -440,7 +439,7 @@ on. Calling a ufunc is a simple matter:
           0.77815125,  0.84509804,  0.90308999,  0.95424251])
 ```
 
-In addition to basic operation like above, ufuncs that take two input
+In addition to a basic operation like the above, ufuncs that take two input
 arrays and return an output array can be used in more advanced ways.
 
 ufuncs
@@ -454,7 +453,7 @@ array:
 ```python
   
   [8.1, 1.6, 0.9, 4.3, 7.0, 7.3, 4.7, 8.2, 7.2, 3.0,
-  1.4, 9.8, 5.7, 0.7, 8.7, 4.6, 8.8, 0.9, 4.4, 4.4]
+   1.4, 9.8, 5.7, 0.7, 8.7, 4.6, 8.8, 0.9, 4.4, 4.4]
 ```
 
 External Resources
@@ -468,3 +467,4 @@ selection of them:
  * [NumPy Reference](http://docs.scipy.org/doc/numpy/reference/)
  * [NumPy For Matlab Users](http://www.scipy.org/NumPy_for_Matlab_Users)
  * [NumPy CookBook](http://www.scipy.org/Cookbook) 
+ * [Python Scientific Lecture Notes](http://scipy-lectures.github.io/)
